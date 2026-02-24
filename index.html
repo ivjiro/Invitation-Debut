@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sofhia Nicole's 18th Debut</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,600&family=Lato:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white: #ffffff;
+  --deep-pink: #E75480;
+  --mid-pink: #F472A0;
+  --light-pink: #F9A8C9;
+  --blush: #FDDDE6;
+  --deep-purple: #9B5DB8;
+  --mid-purple: #B97DD4;
+  --light-purple: #D4A8E8;
+  --lavender: #EDD9F7;
+  --deep-blue: #5B8FD4;
+  --mid-blue: #7BAEE8;
+  --light-blue: #A8CCEF;
+  --sky: #D6EAFA;
+  --text-dark: #3D2052;
+  --text-mid: #6E4C8A;
+  --text-light: #9B7AB8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px;
+}
+
+.nav-pill {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(231,84,128,0.25);
+  border-radius: 50px;
+  padding: 9px 20px;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 4px 24px rgba(155,93,184,0.12);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+.nav-pill::-webkit-scrollbar { display: none; }
+
+.nav-pill a {
+  text-decoration: none;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--text-mid);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-pill a:hover, .nav-pill a:active { color: var(--deep-pink); }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--white);
+  overflow: hidden;
+  padding: 90px 20px 70px;
+  text-align: center;
+}
+
+.hero-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 15% 25%, rgba(249,168,201,0.38) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 50% at 85% 15%, rgba(212,168,232,0.32) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 45% at 75% 85%, rgba(168,204,239,0.30) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 40% at 25% 80%, rgba(232,219,247,0.35) 0%, transparent 55%);
+}
+
+/* Floral corners */
+.floral-svg { position: absolute; pointer-events: none; user-select: none; }
+.floral-tl { top: 0; left: 0; width: clamp(150px, 28vw, 320px); opacity: 0.85; }
+.floral-tr { top: 0; right: 0; width: clamp(150px, 28vw, 320px); transform: scaleX(-1); opacity: 0.85; }
+.floral-bl { bottom: 0; left: 0; width: clamp(110px, 22vw, 260px); transform: scaleY(-1); opacity: 0.65; }
+.floral-br { bottom: 0; right: 0; width: clamp(110px, 22vw, 260px); transform: scale(-1,-1); opacity: 0.65; }
+
+.hero-content { position: relative; z-index: 2; width: 100%; }
+
+.hero-eyebrow {
+  font-size: clamp(0.55rem, 2.2vw, 0.68rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--deep-pink);
+  font-weight: 300;
+  margin-bottom: 14px;
+  opacity: 0;
+  animation: fadeDown 0.9s ease 0.2s forwards;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.6rem, 14vw, 10rem);
+  font-weight: 500;
+  line-height: 0.9;
+  color: var(--text-dark);
+  opacity: 0;
+  animation: fadeDown 1s ease 0.4s forwards;
+}
+
+.hero-name .script {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--deep-pink);
+  font-size: clamp(2.4rem, 10vw, 7rem);
+}
+
+.hero-badge {
+  display: inline-block;
+  margin: 18px auto;
+  border: 1.5px solid var(--light-pink);
+  border-radius: 50px;
+  padding: 7px 20px;
+  font-size: clamp(0.62rem, 2.5vw, 0.75rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--deep-purple);
+  background: rgba(237,217,247,0.35);
+  opacity: 0;
+  animation: fadeDown 1s ease 0.65s forwards;
+}
+
+.hero-floral-divider {
+  margin: 16px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeDown 1s ease 0.8s forwards;
+}
+.hero-floral-divider svg { width: clamp(90px, 22vw, 180px); }
+.hero-floral-divider .center-icon { font-size: clamp(1.2rem, 4vw, 1.6rem); }
+
+.hero-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeDown 1s ease 1s forwards;
+  margin-top: 4px;
+}
+
+.hero-detail-sep {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--light-pink), transparent);
+  margin: 0 20px;
+  min-height: 50px;
+}
+
+.hero-detail-item { text-align: center; padding: 0 4px; }
+.hero-detail-item .dlabel {
+  font-size: clamp(0.52rem, 2vw, 0.6rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+.hero-detail-item .dvalue {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.88rem, 3.5vw, 1.05rem);
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.scroll-line {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  animation: pulse 2.5s ease infinite;
+}
+.scroll-line span {
+  font-size: 0.55rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+.scroll-line::after {
+  content: '';
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--deep-pink), transparent);
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ─── SECTION BASE ─── */
+.section-wrap {
+  padding: clamp(52px, 8vw, 88px) clamp(18px, 5vw, 40px);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-floral-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: clamp(32px, 5vw, 50px);
+}
+
+.section-tag {
+  font-size: clamp(0.55rem, 2.2vw, 0.62rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--deep-pink);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 5.5vw, 3rem);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.15;
+}
+.section-title em { font-style: italic; color: var(--deep-purple); }
+
+.floral-h-deco {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 1rem;
+}
+.floral-h-deco::before, .floral-h-deco::after {
+  content: '';
+  display: block;
+  width: clamp(40px, 8vw, 70px);
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--mid-pink));
+}
+.floral-h-deco::after { background: linear-gradient(270deg, transparent, var(--mid-pink)); }
+
+/* ─── SECTION BACKGROUNDS ─── */
+.bg-floral-pink {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 50%, rgba(253,221,230,0.7) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at 90% 50%, rgba(237,217,247,0.5) 0%, transparent 55%),
+    var(--white);
+}
+.bg-floral-purple {
+  background:
+    radial-gradient(ellipse 80% 60% at 90% 50%, rgba(237,217,247,0.7) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at 10% 50%, rgba(214,234,250,0.5) 0%, transparent 55%),
+    var(--white);
+}
+.bg-floral-blue {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 10%, rgba(214,234,250,0.65) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at 50% 90%, rgba(253,221,230,0.45) 0%, transparent 55%),
+    var(--white);
+}
+
+/* ─── TIMELINE ─── */
+.timeline {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-left: clamp(28px, 6vw, 44px);
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 12px; bottom: 12px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--deep-pink), var(--mid-purple), var(--mid-blue));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: clamp(22px, 4vw, 38px);
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.timeline-item.visible { opacity: 1; transform: translateX(0); }
+
+.t-dot {
+  position: absolute;
+  left: clamp(-33px, -5.5vw, -41px);
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2.5px solid white;
+  box-shadow: 0 0 0 2px var(--mid-pink);
+  background: var(--mid-pink);
+}
+.t-dot.purple { background: var(--mid-purple); box-shadow: 0 0 0 2px var(--mid-purple); }
+.t-dot.blue   { background: var(--mid-blue);   box-shadow: 0 0 0 2px var(--mid-blue); }
+
+.t-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(231,84,128,0.15);
+  border-radius: 16px;
+  padding: clamp(14px, 4vw, 22px) clamp(14px, 4vw, 24px);
+  box-shadow: 0 4px 20px rgba(155,93,184,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.t-card:hover { transform: translateX(4px); box-shadow: 0 8px 28px rgba(231,84,128,0.13); }
+
+.t-card .time {
+  font-size: clamp(0.58rem, 2.2vw, 0.62rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--deep-pink);
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.t-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  color: var(--text-dark);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.t-card p {
+  font-size: clamp(0.78rem, 2.8vw, 0.84rem);
+  color: var(--text-mid);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ─── ATTIRE ─── */
+.attire-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(130px, 28vw, 180px), 1fr));
+  gap: clamp(12px, 3vw, 18px);
+  margin-bottom: 24px;
+}
+
+.swatch-card {
+  background: var(--white);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 3px 18px rgba(155,93,184,0.10);
+  border: 1.5px solid rgba(212,168,232,0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.swatch-card:active, .swatch-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 26px rgba(231,84,128,0.15);
+}
+.swatch-bar {
+  height: clamp(60px, 12vw, 90px);
+  position: relative;
+  overflow: hidden;
+}
+.swatch-bar::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: -5%;
+  width: 110%;
+  height: 24px;
+  background: var(--white);
+  border-radius: 50%;
+}
+.swatch-info { padding: 10px 12px 14px; text-align: center; }
+.swatch-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.82rem, 3vw, 1rem);
+  color: var(--text-dark);
+}
+.swatch-hex {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+.attire-note {
+  background: linear-gradient(135deg, rgba(253,221,230,0.5), rgba(214,234,250,0.4));
+  border-left: 3.5px solid var(--deep-pink);
+  border-radius: 0 16px 16px 0;
+  padding: clamp(16px, 4vw, 22px) clamp(16px, 4vw, 26px);
+  font-size: clamp(0.8rem, 3vw, 0.86rem);
+  line-height: 1.85;
+  color: var(--text-mid);
+  font-weight: 300;
+}
+.attire-note strong { color: var(--text-dark); font-weight: 600; }
+
+/* ─── VENUE ─── */
+.venue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(14px, 3vw, 24px);
+  margin-top: 28px;
+}
+@media (max-width: 600px) { .venue-grid { grid-template-columns: 1fr; } }
+
+.venue-map-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  height: clamp(220px, 45vw, 320px);
+  box-shadow: 0 8px 32px rgba(91,143,212,0.18);
+  border: 2px solid rgba(168,204,239,0.35);
+}
+.venue-map-wrap iframe { width: 100%; height: 100%; border: none; }
+
+.venue-photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(8px, 2vw, 10px);
+}
+
+.vphoto {
+  height: clamp(100px, 20vw, 148px);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(61,32,82,0.5);
+  font-weight: 300;
+  border: 1.5px solid rgba(255,255,255,0.8);
+  box-shadow: 0 3px 12px rgba(155,93,184,0.1);
+  transition: transform 0.25s ease;
+}
+.vphoto:active, .vphoto:hover { transform: scale(1.03); }
+.vphoto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.vphoto span { position: relative; z-index: 1; }
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, var(--deep-pink), var(--mid-purple));
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: clamp(0.7rem, 2.8vw, 0.75rem);
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 5px 22px rgba(231,84,128,0.32);
+  touch-action: manipulation;
+}
+.map-link:active, .map-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(231,84,128,0.4);
+}
+
+/* ─── RSVP SECTION ─── */
+#rsvp-section { background: var(--white); }
+
+.rsvp-card {
+  background: var(--white);
+  border-radius: 28px;
+  box-shadow: 0 12px 60px rgba(155,93,184,0.12);
+  border: 2px solid rgba(212,168,232,0.25);
+  padding: clamp(32px, 6vw, 52px) clamp(22px, 6vw, 48px);
+  max-width: 560px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.rsvp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--deep-pink), var(--mid-purple), var(--mid-blue), var(--deep-pink));
+  background-size: 200%;
+  animation: gradShift 4s ease infinite;
+}
+@keyframes gradShift {
+  0%   { background-position: 0%; }
+  50%  { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+.rsvp-flower-ring {
+  font-size: clamp(2.4rem, 8vw, 3.2rem);
+  display: block;
+  margin-bottom: 14px;
+  animation: slowSpin 12s linear infinite;
+}
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.rsvp-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 5vw, 1.7rem);
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+.rsvp-card-title em { font-style: italic; color: var(--deep-pink); }
+
+.rsvp-card-subtitle {
+  font-size: clamp(0.8rem, 3vw, 0.84rem);
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.8;
+  max-width: 340px;
+  margin: 0 auto 24px;
+}
+
+.rsvp-deadline {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(253,221,230,0.6), rgba(237,217,247,0.5));
+  border: 1.5px solid rgba(231,84,128,0.2);
+  border-radius: 50px;
+  padding: 7px 18px;
+  font-size: clamp(0.62rem, 2.4vw, 0.72rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--deep-pink);
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+.rsvp-gform-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: clamp(14px, 3.5vw, 18px) clamp(28px, 7vw, 44px);
+  background: linear-gradient(135deg, var(--deep-pink), var(--mid-purple), var(--deep-blue));
+  background-size: 200%;
+  background-position: left;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.72rem, 2.8vw, 0.85rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-position 0.4s ease;
+  box-shadow: 0 8px 32px rgba(231,84,128,0.32);
+  width: 100%;
+  max-width: 360px;
+  touch-action: manipulation;
+}
+.rsvp-gform-btn:active, .rsvp-gform-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(155,93,184,0.38);
+  background-position: right;
+}
+
+.rsvp-note {
+  margin-top: 18px;
+  font-size: clamp(0.68rem, 2.5vw, 0.72rem);
+  color: var(--text-light);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Guide box */
+.gform-guide {
+  max-width: 560px;
+  margin: 24px auto 0;
+  background: linear-gradient(135deg, rgba(214,234,250,0.3), rgba(237,217,247,0.3));
+  border: 1.5px solid rgba(168,204,239,0.4);
+  border-radius: 20px;
+  padding: clamp(20px, 5vw, 28px) clamp(18px, 5vw, 32px);
+}
+.gform-guide h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+  color: var(--text-dark);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gform-steps { display: flex; flex-direction: column; gap: 12px; }
+.gform-step { display: flex; gap: 12px; align-items: flex-start; }
+.step-num {
+  width: 24px; height: 24px; min-width: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--deep-pink), var(--mid-purple));
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
+}
+.step-text {
+  font-size: clamp(0.76rem, 2.8vw, 0.82rem);
+  color: var(--text-mid);
+  font-weight: 300;
+  line-height: 1.7;
+}
+.step-text strong { color: var(--text-dark); font-weight: 500; }
+.step-text code {
+  background: rgba(231,84,128,0.1);
+  color: var(--deep-pink);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+/* ─── 18 ROSES & CANDLES ─── */
+.tabs-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.tab-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: clamp(10px,2.5vw,13px) clamp(22px,5vw,36px);
+  border-radius: 50px;
+  border: 2px solid transparent;
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.72rem,2.8vw,0.82rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: rgba(255,255,255,0.7);
+  color: var(--text-mid);
+  border-color: rgba(212,168,232,0.4);
+  touch-action: manipulation;
+}
+.tab-btn.active.roses {
+  background: linear-gradient(135deg, var(--deep-pink), var(--mid-pink));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(231,84,128,0.3);
+}
+.tab-btn.active.candles {
+  background: linear-gradient(135deg, var(--mid-purple), var(--deep-blue));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(155,93,184,0.3);
+}
+.tab-btn.active.shots {
+  background: linear-gradient(135deg, #7BAEE8, #5B8FD4);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(91,143,212,0.3);
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.eighteen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(10px,2.5vw,14px);
+}
+
+.eighteen-card {
+  background: rgba(255,255,255,0.82);
+  border-radius: 16px;
+  padding: clamp(14px,3.5vw,18px) clamp(12px,3vw,16px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1.5px solid rgba(231,84,128,0.12);
+  box-shadow: 0 3px 16px rgba(155,93,184,0.07);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.eighteen-card:hover, .eighteen-card:active {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(231,84,128,0.13);
+}
+
+.card-num {
+  width: clamp(28px,6vw,34px);
+  height: clamp(28px,6vw,34px);
+  min-width: clamp(28px,6vw,34px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(0.7rem,2.5vw,0.82rem);
+  font-weight: 400;
+  color: white;
+  flex-shrink: 0;
+}
+.card-num.rose-num {
+  background: linear-gradient(135deg, var(--deep-pink), var(--mid-pink));
+}
+.card-num.candle-num {
+  background: linear-gradient(135deg, var(--mid-purple), var(--deep-blue));
+}
+.card-num.shots-num {
+  background: linear-gradient(135deg, #7BAEE8, #5B8FD4);
+}
+
+.card-info { flex: 1; min-width: 0; }
+.card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.88rem,3.2vw,1rem);
+  color: var(--text-dark);
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-role {
+  font-size: clamp(0.65rem,2.4vw,0.72rem);
+  color: var(--text-light);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-icon { font-size: clamp(1rem,3.5vw,1.2rem); flex-shrink: 0; }
+
+/* ─── FOOTER ─── */
+footer {
+  text-align: center;
+  padding: clamp(50px, 10vw, 70px) 20px clamp(36px, 6vw, 48px);
+  position: relative;
+  overflow: hidden;
+}
+.footer-inner { position: relative; z-index: 1; }
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
+  color: var(--deep-pink);
+  margin-bottom: 8px;
+}
+.footer-text {
+  font-size: clamp(0.62rem, 2.4vw, 0.72rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 300;
+}
+.footer-heart { color: var(--deep-pink); font-size: 0.9rem; display: block; margin: 8px 0 4px; }
+.footer-sub {
+  margin-top: 8px;
+  font-size: clamp(0.58rem, 2.2vw, 0.65rem);
+  color: var(--text-light);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+}
+
+/* ─── REVEAL ANIMATION ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── MOBILE HERO DETAILS STACK ─── */
+@media (max-width: 480px) {
+  .hero-details {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-detail-sep { display: none; }
+  .hero-detail-item .dvalue { font-size: 0.96rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-pill">
+    <a href="#hero">Home</a>
+    <a href="#program-section">Program</a>
+    <a href="#eighteen-section">The 18s</a>
+    <a href="#attire-section">Attire</a>
+    <a href="#venue-section">Venue</a>
+    <a href="#rsvp-section">RSVP</a>
+  </div>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="hero-bg-gradient"></div>
+
+  <svg class="floral-svg floral-tl" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="38" fill="#F9A8C9" opacity="0.55"/>
+    <circle cx="55" cy="58" r="26" fill="#F472A0" opacity="0.45"/>
+    <circle cx="62" cy="54" r="16" fill="#E75480" opacity="0.35"/>
+    <ellipse cx="30" cy="80" rx="22" ry="14" fill="#F9A8C9" opacity="0.4" transform="rotate(-20 30 80)"/>
+    <ellipse cx="90" cy="35" rx="18" ry="11" fill="#F9A8C9" opacity="0.4" transform="rotate(15 90 35)"/>
+    <circle cx="160" cy="40" r="28" fill="#D4A8E8" opacity="0.45"/>
+    <circle cx="155" cy="36" r="18" fill="#B97DD4" opacity="0.38"/>
+    <circle cx="165" cy="44" r="12" fill="#9B5DB8" opacity="0.28"/>
+    <circle cx="115" cy="20" r="6" fill="#EDD9F7" opacity="0.7"/>
+    <circle cx="128" cy="14" r="4" fill="#EDD9F7" opacity="0.65"/>
+    <circle cx="105" cy="32" r="5" fill="#F9D5E5" opacity="0.7"/>
+    <circle cx="95" cy="18" r="3.5" fill="#EDD9F7" opacity="0.6"/>
+    <circle cx="200" cy="80" r="22" fill="#A8CCEF" opacity="0.45"/>
+    <circle cx="195" cy="76" r="14" fill="#7BAEE8" opacity="0.38"/>
+    <circle cx="202" cy="82" r="9" fill="#5B8FD4" opacity="0.28"/>
+    <path d="M62 98 Q55 140 40 180" stroke="#B97DD4" stroke-width="2" fill="none" opacity="0.35"/>
+    <path d="M160 68 Q155 110 140 155" stroke="#F472A0" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <ellipse cx="50" cy="130" rx="16" ry="9" fill="#D4A8E8" opacity="0.35" transform="rotate(-30 50 130)"/>
+    <ellipse cx="148" cy="122" rx="14" ry="8" fill="#F9A8C9" opacity="0.35" transform="rotate(20 148 122)"/>
+    <circle cx="30" cy="160" r="16" fill="#F9A8C9" opacity="0.4"/>
+    <circle cx="20" cy="210" r="12" fill="#D4A8E8" opacity="0.38"/>
+    <circle cx="45" cy="240" r="9" fill="#A8CCEF" opacity="0.38"/>
+    <circle cx="18" cy="270" r="7" fill="#F9D5E5" opacity="0.5"/>
+    <circle cx="60" cy="310" r="32" fill="#F9A8C9" opacity="0.45"/>
+    <circle cx="56" cy="306" r="20" fill="#F472A0" opacity="0.38"/>
+    <circle cx="62" cy="312" r="13" fill="#E75480" opacity="0.28"/>
+    <ellipse cx="100" cy="290" rx="8" ry="12" fill="#F9D5E5" opacity="0.5" transform="rotate(-10 100 290)"/>
+    <ellipse cx="130" cy="310" rx="7" ry="10" fill="#EDD9F7" opacity="0.5" transform="rotate(8 130 310)"/>
+  </svg>
+
+  <svg class="floral-svg floral-tr" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="38" fill="#F9A8C9" opacity="0.55"/>
+    <circle cx="55" cy="58" r="26" fill="#F472A0" opacity="0.45"/>
+    <circle cx="62" cy="54" r="16" fill="#E75480" opacity="0.35"/>
+    <ellipse cx="30" cy="80" rx="22" ry="14" fill="#F9A8C9" opacity="0.4" transform="rotate(-20 30 80)"/>
+    <ellipse cx="90" cy="35" rx="18" ry="11" fill="#F9A8C9" opacity="0.4" transform="rotate(15 90 35)"/>
+    <circle cx="160" cy="40" r="28" fill="#D4A8E8" opacity="0.45"/>
+    <circle cx="155" cy="36" r="18" fill="#B97DD4" opacity="0.38"/>
+    <circle cx="200" cy="80" r="22" fill="#A8CCEF" opacity="0.45"/>
+    <circle cx="115" cy="20" r="6" fill="#EDD9F7" opacity="0.7"/>
+    <circle cx="128" cy="14" r="4" fill="#EDD9F7" opacity="0.65"/>
+    <circle cx="105" cy="32" r="5" fill="#F9D5E5" opacity="0.7"/>
+    <path d="M62 98 Q55 140 40 180" stroke="#B97DD4" stroke-width="2" fill="none" opacity="0.35"/>
+    <ellipse cx="50" cy="130" rx="16" ry="9" fill="#D4A8E8" opacity="0.35" transform="rotate(-30 50 130)"/>
+    <circle cx="30" cy="160" r="16" fill="#F9A8C9" opacity="0.4"/>
+    <circle cx="20" cy="210" r="12" fill="#D4A8E8" opacity="0.38"/>
+    <circle cx="60" cy="310" r="32" fill="#F9A8C9" opacity="0.45"/>
+    <circle cx="56" cy="306" r="20" fill="#F472A0" opacity="0.38"/>
+    <ellipse cx="100" cy="290" rx="8" ry="12" fill="#F9D5E5" opacity="0.5" transform="rotate(-10 100 290)"/>
+  </svg>
+
+  <svg class="floral-svg floral-bl" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="32" fill="#D4A8E8" opacity="0.5"/>
+    <circle cx="55" cy="56" r="20" fill="#B97DD4" opacity="0.4"/>
+    <circle cx="140" cy="40" r="24" fill="#A8CCEF" opacity="0.48"/>
+    <circle cx="136" cy="36" r="15" fill="#7BAEE8" opacity="0.38"/>
+    <circle cx="200" cy="70" r="20" fill="#F9A8C9" opacity="0.42"/>
+    <circle cx="30" cy="140" r="18" fill="#A8CCEF" opacity="0.42"/>
+    <circle cx="80" cy="180" r="14" fill="#D4A8E8" opacity="0.42"/>
+    <circle cx="100" cy="20" r="6" fill="#EDD9F7" opacity="0.65"/>
+    <ellipse cx="50" cy="100" rx="14" ry="8" fill="#F9A8C9" opacity="0.38" transform="rotate(25 50 100)"/>
+  </svg>
+
+  <svg class="floral-svg floral-br" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="32" fill="#A8CCEF" opacity="0.5"/>
+    <circle cx="55" cy="56" r="20" fill="#5B8FD4" opacity="0.38"/>
+    <circle cx="150" cy="45" r="26" fill="#F9A8C9" opacity="0.46"/>
+    <circle cx="145" cy="41" r="17" fill="#F472A0" opacity="0.38"/>
+    <circle cx="200" cy="80" r="20" fill="#D4A8E8" opacity="0.44"/>
+    <circle cx="30" cy="150" r="16" fill="#F9D5E5" opacity="0.44"/>
+    <circle cx="80" cy="200" r="14" fill="#A8CCEF" opacity="0.4"/>
+    <circle cx="120" cy="20" r="5" fill="#EDD9F7" opacity="0.65"/>
+    <ellipse cx="55" cy="110" rx="13" ry="8" fill="#D4A8E8" opacity="0.38" transform="rotate(-15 55 110)"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">You are invited to celebrate</p>
+    <h1 class="hero-name">
+      Sofhia
+      <span class="script">Nicole</span>
+    </h1>
+    <div class="hero-badge">Eighteenth Birthday &amp; Debut</div>
+
+    <div class="hero-floral-divider">
+      <svg viewBox="0 0 180 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 10 Q20 2 40 10 Q60 18 80 10 Q100 2 120 10 Q140 18 160 10 Q170 6 180 10" stroke="#F9A8C9" stroke-width="1.2" fill="none"/>
+        <circle cx="25" cy="7" r="3" fill="#F472A0" opacity="0.6"/>
+        <circle cx="65" cy="13" r="3" fill="#D4A8E8" opacity="0.6"/>
+        <circle cx="105" cy="7" r="3" fill="#A8CCEF" opacity="0.6"/>
+        <circle cx="145" cy="13" r="3" fill="#F472A0" opacity="0.6"/>
+      </svg>
+      <span class="center-icon">🌸</span>
+      <svg viewBox="0 0 180 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M180 10 Q160 2 140 10 Q120 18 100 10 Q80 2 60 10 Q40 18 20 10 Q10 6 0 10" stroke="#F9A8C9" stroke-width="1.2" fill="none"/>
+        <circle cx="155" cy="7" r="3" fill="#F472A0" opacity="0.6"/>
+        <circle cx="115" cy="13" r="3" fill="#D4A8E8" opacity="0.6"/>
+        <circle cx="75" cy="7" r="3" fill="#A8CCEF" opacity="0.6"/>
+        <circle cx="35" cy="13" r="3" fill="#F472A0" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <div class="hero-details">
+      <div class="hero-detail-item">
+        <p class="dlabel">Date</p>
+        <p class="dvalue">Sunday<br>May 03, 2026</p>
+      </div>
+      <div class="hero-detail-sep"></div>
+      <div class="hero-detail-item">
+        <p class="dlabel">Time</p>
+        <p class="dvalue">5:00 PM<br>onwards</p>
+      </div>
+      <div class="hero-detail-sep"></div>
+      <div class="hero-detail-item">
+        <p class="dlabel">Venue</p>
+        <p class="dvalue">Narciso's Garden<br>Silang, Cavite</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-line"><span>Scroll</span></div>
+</section>
+
+<!-- ════════ PROGRAM ════════ -->
+<div id="program-section" class="bg-floral-pink" style="padding: 1px 0;">
+<div class="section-wrap">
+  <div class="section-floral-header reveal">
+    <p class="section-tag">The Celebration</p>
+    <h2 class="section-title">Evening <em>Program</em></h2>
+    <div class="floral-h-deco">🌺</div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <p class="time">5:00 PM</p>
+        <h3>🥂 Guest Arrival & Cocktails</h3>
+        <p>Welcome drinks and photo opportunities at the reception area as guests arrive and mingle.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-dot purple"></div>
+      <div class="t-card">
+        <p class="time">6:00 PM</p>
+        <h3>👑 Grand Entrance</h3>
+        <p>Sofhia makes her elegant grand entrance, escorted by her debutante court, marking the official start of the celebration.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <p class="time">6:30 PM</p>
+        <h3>🌹 18 Roses</h3>
+        <p>Eighteen special gentlemen present Sofhia with a rose — each bloom symbolizing love, guidance, and the irreplaceable role they play in her life.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-dot blue"></div>
+      <div class="t-card">
+        <p class="time">7:00 PM</p>
+        <h3>🕯️ 18 Candles</h3>
+        <p>Eighteen remarkable women light a candle for Sofhia — each flame representing a wish, a prayer, and a guiding light as she steps into womanhood.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-dot purple"></div>
+      <div class="t-card">
+        <p class="time">7:30 PM</p>
+        <h3>🎁 18 Treasures</h3>
+        <p>Eighteen treasured gifts from loved ones, each carrying a heartfelt message and token of affection for her future adventures.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-dot"></div>
+      <div class="t-card">
+        <p class="time">8:00 PM</p>
+        <h3>💃 Cotillion de Honor</h3>
+        <p>Sofhia's court performs a graceful formal waltz followed by a special production number choreographed just for this night.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-dot blue"></div>
+      <div class="t-card">
+        <p class="time">8:30 PM</p>
+        <h3>🍽️ Dinner & Open Program</h3>
+        <p>A sumptuous dinner, heartfelt toasts, and open dancing to celebrate well into the night.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ════════ 18 ROSES & CANDLES ════════ -->
+<div id="eighteen-section" style="padding: 1px 0; background: var(--white);">
+<div class="section-wrap">
+  <div class="section-floral-header reveal">
+    <p class="section-tag">A Tribute of Love</p>
+    <h2 class="section-title">Those Who <em>Matter Most</em></h2>
+    <div class="floral-h-deco">✨</div>
+    <p style="max-width:460px; font-size:clamp(0.8rem,3vw,0.86rem); font-weight:300; color:var(--text-mid); line-height:1.8; margin-top:12px;">
+      Roses from the gentlemen who love her, candles from the women who light her way, and shots to celebrate the night away.
+    </p>
+  </div>
+
+  <div class="tabs-wrapper reveal">
+    <!-- Tab buttons -->
+    <div class="tab-btns">
+      <button class="tab-btn roses active" onclick="switchTab('roses')">🌹 &nbsp;18 Roses</button>
+      <button class="tab-btn candles" onclick="switchTab('candles')">🕯️ &nbsp;18 Candles</button>
+      <button class="tab-btn shots" onclick="switchTab('shots')">🥂 &nbsp;18 Shots</button>
+    </div>
+
+    <!-- 18 Roses -->
+    <div class="tab-panel active" id="tab-roses">
+      <div class="eighteen-grid">
+        <div class="eighteen-card"><span class="card-num rose-num">1</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">2</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">3</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">4</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">5</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">6</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">7</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">8</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">9</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">10</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">11</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">12</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">13</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">14</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">15</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">16</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">17</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+        <div class="eighteen-card"><span class="card-num rose-num">18</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🌹</span></div>
+      </div>
+    </div>
+
+    <!-- 18 Candles -->
+    <div class="tab-panel" id="tab-candles">
+      <div class="eighteen-grid">
+        <div class="eighteen-card"><span class="card-num candle-num">1</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">2</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">3</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">4</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">5</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">6</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">7</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">8</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">9</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">10</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">11</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">12</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">13</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">14</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">15</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">16</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">17</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+        <div class="eighteen-card"><span class="card-num candle-num">18</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🕯️</span></div>
+      </div>
+
+    <!-- 18 Shots -->
+    <div class="tab-panel" id="tab-shots">
+      <div class="eighteen-grid">
+        <div class="eighteen-card"><span class="card-num shots-num">1</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">2</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">3</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">4</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">5</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">6</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">7</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">8</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">9</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">10</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">11</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">12</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">13</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">14</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">15</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">16</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">17</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+        <div class="eighteen-card"><span class="card-num shots-num">18</span><div class="card-info"><p class="card-name">Name Here</p></div><span class="card-icon">🥂</span></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ════════ ATTIRE ════════ -->
+<div id="attire-section" class="bg-floral-purple" style="padding: 1px 0;">
+<div class="section-wrap">
+  <div class="section-floral-header reveal">
+    <p class="section-tag">Dress Code</p>
+    <h2 class="section-title">Guest <em>Attire</em></h2>
+    <div class="floral-h-deco">🌸</div>
+    <p style="max-width:460px; font-size:clamp(0.8rem,3vw,0.86rem); font-weight:300; color:var(--text-mid); line-height:1.8; margin-top:12px;">
+      Dress with us in our celebration palette — formal attire encouraged to honor Sofhia's milestone evening.
+    </p>
+  </div>
+
+  <div class="attire-grid reveal">
+    <div class="swatch-card">
+      <div class="swatch-bar" style="background: linear-gradient(135deg, #E75480, #F472A0);"></div>
+      <div class="swatch-info"><p class="swatch-name">Deep Rose</p><p class="swatch-hex">#E75480</p></div>
+    </div>
+    <div class="swatch-card">
+      <div class="swatch-bar" style="background: linear-gradient(135deg, #F9A8C9, #FDDDE6);"></div>
+      <div class="swatch-info"><p class="swatch-name">Blush Pink</p><p class="swatch-hex">#F9A8C9</p></div>
+    </div>
+    <div class="swatch-card">
+      <div class="swatch-bar" style="background: linear-gradient(135deg, #9B5DB8, #B97DD4);"></div>
+      <div class="swatch-info"><p class="swatch-name">Orchid Purple</p><p class="swatch-hex">#9B5DB8</p></div>
+    </div>
+    <div class="swatch-card">
+      <div class="swatch-bar" style="background: linear-gradient(135deg, #D4A8E8, #EDD9F7);"></div>
+      <div class="swatch-info"><p class="swatch-name">Soft Lavender</p><p class="swatch-hex">#D4A8E8</p></div>
+    </div>
+    <div class="swatch-card">
+      <div class="swatch-bar" style="background: linear-gradient(135deg, #5B8FD4, #7BAEE8);"></div>
+      <div class="swatch-info"><p class="swatch-name">Cornflower Blue</p><p class="swatch-hex">#5B8FD4</p></div>
+    </div>
+    <div class="swatch-card">
+      <div class="swatch-bar" style="background: linear-gradient(135deg, #A8CCEF, #D6EAFA);"></div>
+      <div class="swatch-info"><p class="swatch-name">Powder Blue</p><p class="swatch-hex">#A8CCEF</p></div>
+    </div>
+    <div class="swatch-card">
+      <div class="swatch-bar" style="background: linear-gradient(135deg, #f5f0ff, #ffffff); border-bottom: 1px solid rgba(0,0,0,0.05);"></div>
+      <div class="swatch-info"><p class="swatch-name">Ivory / White</p><p class="swatch-hex">#F5F0FF</p></div>
+    </div>
+  </div>
+
+  <div class="attire-note reveal">
+    <strong>For ladies:</strong> Formal gown or cocktail dress in any of the palette shades — soft pinks, purples, and blues are warmly welcomed.<br>
+    <strong>For gentlemen:</strong> Barong Tagalog or a tailored suit in white, cream, powder blue, or navy.<br>
+    <em style="color:var(--deep-pink);">✦ Kindly avoid wearing pure red, orange, or dark black to keep the palette dreamy and cohesive.</em>
+  </div>
+</div>
+</div>
+
+<!-- ════════ VENUE ════════ -->
+<div id="venue-section" class="bg-floral-blue" style="padding: 1px 0;">
+<div class="section-wrap">
+  <div class="section-floral-header reveal">
+    <p class="section-tag">Where to Find Us</p>
+    <h2 class="section-title">The <em>Venue</em></h2>
+    <div class="floral-h-deco">🌷</div>
+  </div>
+
+  <div class="reveal" style="text-align:center; margin-bottom:20px;">
+    <p style="font-family:'Playfair Display',serif; font-size:clamp(1.1rem,4vw,1.3rem); color:var(--text-dark);">Narciso's Garden Restaurant and Events Place</p>
+    <p style="font-size:clamp(0.78rem,3vw,0.86rem); font-weight:300; color:var(--text-mid); margin-top:4px;">Aguinaldo Hwy, Brgy. Luksuhin, Silang, Cavite</p>
+    <a href="https://maps.app.goo.gl/DhMVKjoSDpQCMhhy8" target="_blank" rel="noopener" class="map-link">
+      📍 Open in Google Maps
+    </a>
+  </div>
+
+  <div class="venue-grid reveal">
+    <div class="venue-map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4160.0426387760135!2d120.96110607541189!3d14.19869508624141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7900683b16b5%3A0xb0b5a72645ca5347!2sNarciso&#39;s%20Garden%20Restaurant!5e1!3m2!1sen!2sph!4v1771913243369!5m2!1sen!2sph"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="venue-photo-grid">
+      <!-- Replace with real venue photos using <img src="your-photo.jpg"> inside each .vphoto -->
+      <div class="vphoto" style="background: linear-gradient(135deg, #FDDDE6, #F9A8C9);"><span>Garden</span></div>
+      <div class="vphoto" style="background: linear-gradient(135deg, #EDD9F7, #D4A8E8);"><span>Entrance</span></div>
+      <div class="vphoto" style="background: linear-gradient(135deg, #D4A8E8, #A8CCEF);"><span>Events Hall</span></div>
+      <div class="vphoto" style="background: linear-gradient(135deg, #D6EAFA, #A8CCEF);"><span>Dining</span></div>
+    </div>
+  </div>
+
+  <p class="reveal" style="margin-top:16px; font-size:clamp(0.72rem,2.8vw,0.78rem); color:var(--text-light); font-weight:300; text-align:center;">
+    💡 Parking is available on-site.
+  </p>
+</div>
+</div>
+
+<!-- ════════ RSVP ════════ -->
+<div id="rsvp-section" style="padding: 1px 0; background: var(--white);">
+<div class="section-wrap">
+  <div class="section-floral-header reveal">
+    <p class="section-tag">Kindly Respond By April 02, 2026</p>
+    <h2 class="section-title">Send Your <em>RSVP</em></h2>
+    <div class="floral-h-deco">💌</div>
+    <p style="max-width:400px; font-size:clamp(0.8rem,3vw,0.86rem); font-weight:300; color:var(--text-mid); line-height:1.8; margin-top:10px;">
+      Your presence is the greatest gift. Let Sofhia know you're coming!
+    </p>
+  </div>
+
+  <!-- RSVP Card -->
+  <div class="rsvp-card reveal">
+    <span class="rsvp-flower-ring">🌸</span>
+    <h3 class="rsvp-card-title">You're <em>Invited!</em></h3>
+    <p class="rsvp-card-subtitle">
+      Fill out the Google Form below to confirm your attendance. It only takes a minute!
+    </p>
+    <div class="rsvp-deadline">📅 RSVP Deadline — April 02, 2026</div>
+    <br>
+
+    <!--
+      ════════════════════════════════════════════
+       PASTE YOUR GOOGLE FORM LINK IN href BELOW
+      ════════════════════════════════════════════
+    -->
+    <a
+      href="https://forms.google.com/your-form-link-here"
+      target="_blank"
+      rel="noopener"
+      class="rsvp-gform-btn"
+    >
+      💌 &nbsp; RSVP Now &nbsp; ✦
+    </a>
+
+    <p class="rsvp-note">
+      Opens Google Forms in a new tab.<br>
+      All responses are automatically recorded in Google Sheets.
+    </p>
+  </div>
+
+
+</div>
+</div>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <svg style="position:absolute;bottom:0;left:0;right:0;width:100%;height:80px;opacity:0.5;" viewBox="0 0 1200 80" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 50 Q150 15 300 50 Q450 85 600 50 Q750 15 900 50 Q1050 85 1200 50 L1200 80 L0 80 Z" fill="#FDDDE6"/>
+    <circle cx="150" cy="44" r="16" fill="#F9A8C9" opacity="0.7"/>
+    <circle cx="600" cy="44" r="18" fill="#D4A8E8" opacity="0.65"/>
+    <circle cx="1050" cy="44" r="16" fill="#A8CCEF" opacity="0.65"/>
+    <circle cx="300" cy="38" r="9"  fill="#F472A0" opacity="0.5"/>
+    <circle cx="900" cy="41" r="10" fill="#B97DD4" opacity="0.5"/>
+    <circle cx="450" cy="50" r="7"  fill="#7BAEE8" opacity="0.5"/>
+    <circle cx="750" cy="48" r="8"  fill="#F9A8C9" opacity="0.5"/>
+  </svg>
+
+  <div class="footer-inner">
+    <p class="footer-name">Sofhia Nicole Ardiente</p>
+    <span class="footer-heart">♥</span>
+    <p class="footer-text">18th Birthday &amp; Debut · May 03, 2026</p>
+    <p class="footer-sub">With all our love — Sofhia &amp; Family</p>
+  </div>
+</footer>
+
+<script>
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.querySelector('.tab-btn.' + tab).classList.add('active');
+}
+
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal, .timeline-item').forEach(el => revealObs.observe(el));
+</script>
+</body>
+</html>
